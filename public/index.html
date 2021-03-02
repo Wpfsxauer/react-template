@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<link
+			rel="icon"
+			href="https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/2153c02b52d043647b1769a0750809e8_favicon.ico"
+		/>
+		<title>营业执照</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+		<script type="text/javascript">
+			(function (win, doc) {
+				var docEl = doc.documentElement;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+				function setRemUnit() {
+					var docWidth = docEl.clientWidth;
+					var rem = docWidth / 10;
+					docEl.style.fontSize = rem + "px";
+				}
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+				win.addEventListener(
+					"resize",
+					function () {
+						setRemUnit();
+					},
+					false
+				);
+				win.addEventListener(
+					"pageshow",
+					function (e) {
+						if (e.persisted) {
+							setRemUnit();
+						}
+					},
+					false
+				);
+				setRemUnit();
+				if (win.devicePixelRatio && win.devicePixelRatio >= 2) {
+					var testEl = doc.createElement("div");
+					var fakeBody = doc.createElement("body");
+					// testEl.style.border = '0.5px solid transparent';
+					fakeBody.appendChild(testEl);
+					docEl.appendChild(fakeBody);
+					if (testEl.offsetHeight === 1) {
+						docEl.classList.add("hairlines");
+					}
+					docEl.removeChild(fakeBody);
+				}
+			})(window, document);
+		</script>
+	</head>
+
+	<body>
+		<div id="root"></div>
+	</body>
 </html>

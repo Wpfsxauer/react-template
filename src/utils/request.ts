@@ -2,19 +2,19 @@ import axios from "axios";
 import qs from "qs";
 import JSONP from "jsonp";
 
-import { getRequestFace, postRequestFace, jsonpRequestFace } from "../interface";
+import { getRequestFace, postRequestFace, jsonpRequestFace, requestConfigFace } from "../interface";
 
 const request = axios.create({
 	timeout: 1000 * 3,
 });
 
-const err = (error) => Promise.reject(error);
+const err = (error: any) => Promise.reject(error);
 
 request.interceptors.response.use((response) => {
 	return response.data;
 }, err);
 
-const requestHeaders = (data, cookieFlag = false) => {
+const requestHeaders = (data: requestConfigFace, cookieFlag: boolean = false) => {
 	request.interceptors.request.use((config) => {
 		if (JSON.stringify(data) !== "{}") {
 			Object.keys(data).forEach((item) => {

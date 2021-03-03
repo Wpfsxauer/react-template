@@ -6,18 +6,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route } from "react-router-dom";
 
-declare global {
-  interface Window {
-    WBAPP: any;
-    _$: any;
-  }
-}
-
 ReactDOM.render(
-  <BrowserRouter>
-    <Route path="/" component={App}></Route>
-  </BrowserRouter>,
-  document.getElementById("root")
+	<BrowserRouter>
+		<Route path="/" component={App}></Route>
+	</BrowserRouter>,
+	document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -19,10 +19,15 @@ export interface jsonpRequestFace {
 }
 
 //后端返回数据
-export interface resultParam {
+export interface httpReturnParam {
 	code?: number;
 	message?: string;
 	data?: any;
+}
+
+// Promise错误信息
+export interface promiseErr {
+	<T>(error: T): Promise<T>;
 }
 
 //路由配置参数

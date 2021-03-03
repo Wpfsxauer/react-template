@@ -82,7 +82,7 @@
 		"workbox-webpack-plugin": "5.1.4"
 	},
 	"scripts": {
-		"start": "node scripts/start.js",
+		"start": "cross-env PORT=3000 node scripts/start.js",
 		"build": "cross-env GENERATE_SOURCEMAP=false INLINE_RUNTIME_CHUNK=true FILENAME=survey node scripts/build.js",
 		"test": "node scripts/test.js"
 	},

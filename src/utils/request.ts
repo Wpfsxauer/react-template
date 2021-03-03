@@ -2,13 +2,13 @@ import axios from "axios";
 import qs from "qs";
 import JSONP from "jsonp";
 
-import { getRequestFace, postRequestFace, jsonpRequestFace, requestConfigFace } from "../interface";
+import { getRequestFace, postRequestFace, jsonpRequestFace, requestConfigFace, promiseErr } from "../interface";
 
 const request = axios.create({
 	timeout: 1000 * 3,
 });
 
-const err = (error: any) => Promise.reject(error);
+const err: promiseErr = (error) => Promise.reject(error);
 
 request.interceptors.response.use((response) => {
 	return response.data;

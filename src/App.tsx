@@ -1,6 +1,6 @@
 import React from "react";
-import {routers} from "./router";
-import {Switch, Route} from "react-router-dom";
+import { routers } from "./router";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
 	const routersList = routers.map((item) => (
